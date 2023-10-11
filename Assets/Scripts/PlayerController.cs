@@ -8,6 +8,7 @@ namespace WorkProject
    {
        public Spawner spawner;
        public CloudController cloudController;
+       public List<SwapTools> swapTools;
    
        private void Update()
        {
@@ -26,6 +27,10 @@ namespace WorkProject
            if (Input.GetKeyDown(KeyCode.Space))
            {
                Debug.Log("Space key down");
+               foreach(var swapTools in swapTools)
+               {
+                    swapTools.ChangeTool();
+               }
            }
        }
    }
