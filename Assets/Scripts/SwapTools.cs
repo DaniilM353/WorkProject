@@ -26,8 +26,5 @@ namespace WorkProject
                 tools[i].SetActive(i == index);
             }   
         }
-
-
-
     }
 }
