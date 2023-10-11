@@ -5811,8 +5811,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4557757265253404, guid: 5c9211eb71cff4f4996a21d92317f601, type: 3}
   m_PrefabInstance: {fileID: 646769828}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &648544552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5894,7 +5892,6 @@ MonoBehaviour:
   stick: {fileID: 1194288172}
   range: 30
   speed: 500
->>>>>>> 22883cc0f977cb5eb93d626d72328b53719d11ab
 --- !u!1001 &648900220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17523,11 +17520,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2048797724}
   serializedVersion: 8
   lengthInSec: 5
-<<<<<<< HEAD
   simulationSpeed: 10
-=======
-  simulationSpeed: 2
->>>>>>> 22883cc0f977cb5eb93d626d72328b53719d11ab
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -17708,11 +17701,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-<<<<<<< HEAD
       maxColor: {r: 0.24296904, g: 0.5870751, b: 0.7924528, a: 1}
-=======
-      maxColor: {r: 0.20741367, g: 0.39396554, b: 0.745283, a: 1}
->>>>>>> 22883cc0f977cb5eb93d626d72328b53719d11ab
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -18157,13 +18146,8 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-    m_Rotation: {x: 89.00123, y: 180, z: 180}
-    m_Scale: {x: 8.54, y: 8.08, z: 1}
-=======
     m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 8, y: 8, z: 1}
->>>>>>> 22883cc0f977cb5eb93d626d72328b53719d11ab
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0

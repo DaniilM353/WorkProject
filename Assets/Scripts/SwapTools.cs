@@ -10,11 +10,7 @@ namespace WorkProject
         
         private void Start()
         {
-<<<<<<< HEAD
             ChangeTool();
-=======
-          
->>>>>>> 22883cc0f977cb5eb93d626d72328b53719d11ab
         }
         
         public void ChangeTool()
