@@ -44,12 +44,14 @@
      <Compile Include="Assets\Scripts\TTScripts\PlayerController.cs" />
      <Compile Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Scripts\Utility\FlyCameraBehaviour.cs" />
      <Compile Include="Assets\Scripts\TTScripts\SwapTools.cs" />
+     <Compile Include="Assets\Scripts\CleanerScripts\GameController.cs" />
      <Compile Include="Assets\Scripts\TTScripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\TTScripts\CloudController.cs" />
-     <Compile Include="Assets\Scripts\TTScripts\FreeCamera.cs" />
-     <Compile Include="Assets\Scripts\CleanerScripts\GameController.cs" />
      <Compile Include="Assets\Scripts\CleanerScripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\CleanerScripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\TTScripts\FreeCamera.cs" />
+     <Compile Include="Assets\Scripts\CleanerScripts\Stick.cs" />
+     <Compile Include="Assets\Scripts\CleanerScripts\Player.cs" />
      <None Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Shaders\Cloud.shader" />
      <None Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Shaders\Diffuse.shader" />
      <Reference Include="UnityEngine">
