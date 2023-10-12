@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\TTScripts\FreeCamera.cs" />
      <Compile Include="Assets\Scripts\CleanerScripts\Stick.cs" />
      <Compile Include="Assets\Scripts\CleanerScripts\Player.cs" />
+     <Compile Include="Assets\Scripts\CleanerScripts\Stone.cs" />
      <None Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Shaders\Cloud.shader" />
      <None Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Shaders\Diffuse.shader" />
      <Reference Include="UnityEngine">
