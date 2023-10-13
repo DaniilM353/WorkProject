@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\CleanerScripts\Stick.cs" />
      <Compile Include="Assets\Scripts\CleanerScripts\Player.cs" />
      <Compile Include="Assets\Scripts\CleanerScripts\Stone.cs" />
+     <Compile Include="Assets\Scripts\CleanerScripts\Score.cs" />
      <None Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Shaders\Cloud.shader" />
      <None Include="Assets\AssetStore\AlignedGames\Polygonal Foliage Asset Package\Shaders\Diffuse.shader" />
      <Reference Include="UnityEngine">
