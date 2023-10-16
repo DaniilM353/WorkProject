@@ -2,23 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverState : MonoBehaviour
+public class GameOverState : GameState
 {
-    public List<GameObject> views;
+    public GameState mainMenuState;
+    public LevelController levelController;
 
-    private void OnEnable()
+    public void Restart()
     {
-        foreach (var item in views)
-        {
-            item.SetActive(true);
-        }
-    }
-
-    private void OnDisable()
-    {
-        foreach (var item in views)
-        {
-            item.SetActive(false);
-        }
+        levelController.ClearStone();
+        
+        Exit();
+        mainMenuState.Enter();
+        
     }
 }

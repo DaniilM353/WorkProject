@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace WorkProject
-{
+//namespace WorkProject
+//{
     public class LevelController : MonoBehaviour
     {
         public Spawner spawner;
@@ -14,7 +14,23 @@ namespace WorkProject
         public float delayMin = 0.5f;
         public float delayStep = 0.05f;
 
+        public int score = 0;
+        public int hightScore = 0;
+
         private float m_delay = 0.5f;
+
+        private List<GameObject> m_stones = new List<GameObject>(16);
+
+        public void ClearStone()
+        {
+            foreach (var stone in m_stones)
+            {
+                Destroy(stone);
+            }
+
+            m_stones.Clear();
+        }
+
         
         private void Start()
         {
@@ -24,19 +40,21 @@ namespace WorkProject
 
         private void OnEnable()
         {
-            Stone.onCollisionStone += GameOver;
+            GameEvent.onStickHit += OnStickHit;
+
         }
 
         private void OnDisable()
         {
-            Stone.onCollisionStone -= GameOver;
+            GameEvent.onStickHit -= OnStickHit;
         }
 
-        private void GameOver()
+        private void OnStickHit()
         {
-            Debug.Log("Game Over");
-            isGameOver = true;
+            score++;
+            hightScore = Math.Max(hightScore, score);
         }
+
 
         private IEnumerator SpawnStoneProc()
         {
@@ -44,7 +62,8 @@ namespace WorkProject
             {
                 yield return new WaitForSeconds(m_delay);
                 
-                spawner.Spawn();
+                var stone = spawner.Spawn();
+                m_stones.Add(stone);
                 
                 RefreshDelay();
             }
@@ -57,4 +76,4 @@ namespace WorkProject
             delayMax = Math.Max(delayMin, delayMax - delayStep);
         }
     }
-}
+//}

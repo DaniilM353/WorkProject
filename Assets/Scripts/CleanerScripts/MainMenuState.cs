@@ -4,23 +4,15 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class MainMenuState : MonoBehaviour
+public class MainMenuState : GameState
 {
-    public List<GameObject> views;
+    public GameState gamePlayState;
 
-    private void OnEnable()
+    public void PlayGame()
     {
-        foreach (var item in views)
-        { 
-            item.SetActive(true);
-        }
-    }
 
-    private void OnDisable()
-    {
-        foreach (var item in views)
-        {
-            item.SetActive(false);
-        }
+        Exit();
+        gamePlayState.Enter();
+
     }
 }

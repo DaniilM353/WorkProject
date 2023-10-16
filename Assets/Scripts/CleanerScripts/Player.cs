@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
 	{
 		m_lastPosition = helper.position;
 		
-		m_isDown = Input.GetMouseButton(0);
 
 		Quaternion rot = stick.localRotation;
 		
@@ -27,6 +26,11 @@ public class Player : MonoBehaviour
 
 		stick.localRotation = rot;
 
+	}
+
+	public void SetDown(bool value)
+	{ 
+		m_isDown = value;
 	}
 
 	public void OnCollisionStick(Collider collider)
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
 			if (collider.TryGetComponent(out Stone stone))
 			{
 				stone.isAffect = true;
+				GameEvent.StickHit();
 			}
 		}
 	}

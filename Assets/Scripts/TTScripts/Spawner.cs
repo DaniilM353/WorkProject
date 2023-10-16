@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace WorkProject
-{
+//namespace WorkProject
+//{
     public class Spawner : MonoBehaviour
     {
         public GameObject[] prefabs;
@@ -34,4 +34,4 @@ namespace WorkProject
             return prefabs[index];
         }
     }
-}
+//}

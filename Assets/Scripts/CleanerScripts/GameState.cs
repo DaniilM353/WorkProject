@@ -2,11 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour
+public abstract class GameState : MonoBehaviour
 {
     public List<GameObject> views;
 
-    private void OnEnable()
+    public void Enter()
+    { 
+        gameObject.SetActive(true);
+    }
+
+    public void Exit()
+    {
+        gameObject.SetActive(false);
+    }
+    
+    protected virtual void OnEnable()
     {
         foreach (var item in views)
         {
@@ -14,11 +24,14 @@ public class GameState : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         foreach (var item in views)
         {
-            item.SetActive(false);
+            if (item)
+            {
+                item.SetActive(false);
+            }
         }
     }
 }

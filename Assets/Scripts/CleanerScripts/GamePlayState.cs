@@ -2,23 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamePlayState : MonoBehaviour
+public class GamePlayState : GameState
 {
-    public List<GameObject> views;
+    public LevelController levelController;
+    public PlayerController playerController;
+    public GameState gameOverState; 
 
-    private void OnEnable()
-    {
-        foreach (var item in views)
-        {
-            item.SetActive(true);
-        }
+    protected override void OnEnable()
+    { 
+        base.OnEnable();
+
+        levelController.enabled = true;
+        playerController.enabled = true;
+
+        GameEvent.onCollisionStone += OnGameOver;
     }
 
-    private void OnDisable()
+    private void OnGameOver()
     {
-        foreach (var item in views)
-        {
-            item.SetActive(false);
-        }
+        Exit();
+        gameOverState.Enter();
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+
+        levelController.enabled = false;
+        playerController.enabled = false;
+
+        GameEvent.onCollisionStone += OnGameOver;
     }
 }
