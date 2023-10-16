@@ -8,7 +8,7 @@ using UnityEngine;
     public class LevelController : MonoBehaviour
     {
         public Spawner spawner;
-        public bool isGameOver = false;
+        private float m_lastSpawnedTime = 0;
 
         public float delayMax = 2f;
         public float delayMin = 0.5f;
@@ -34,13 +34,14 @@ using UnityEngine;
         
         private void Start()
         {
-            StartCoroutine(SpawnStoneProc());
+            m_lastSpawnedTime = Time.time;
             RefreshDelay();
         }
 
         private void OnEnable()
         {
             GameEvent.onStickHit += OnStickHit;
+            score = 0;
 
         }
 
@@ -55,25 +56,30 @@ using UnityEngine;
             hightScore = Math.Max(hightScore, score);
         }
 
-
-        private IEnumerator SpawnStoneProc()
+        private void Update()
         {
-            do
+            if (Time.time >= m_lastSpawnedTime + m_delay)
             {
-                yield return new WaitForSeconds(m_delay);
-                
                 var stone = spawner.Spawn();
                 m_stones.Add(stone);
-                
+
+                m_lastSpawnedTime = Time.time;
+
                 RefreshDelay();
             }
-            while (!isGameOver);
         }
 
         public void RefreshDelay()
-        {
+        { 
             m_delay = UnityEngine.Random.Range(delayMin, delayMax);
-            delayMax = Math.Max(delayMin, delayMax - delayStep);
+            delayMax = Mathf.Max(delayMin, delayMax - delayStep);
         }
+
+        IEnumerator WaitEvent(System.Action callBack)
+        {
+            yield return new WaitForSeconds(delayStep);
+            callBack?.Invoke();
+        }
+
     }
 //}

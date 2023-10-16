@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
 
 public class GamePlayState : GameState
 {
     public LevelController levelController;
     public PlayerController playerController;
-    public GameState gameOverState; 
+    public GameState gameOverState;
+    public TMP_Text scoreText;
 
     protected override void OnEnable()
     { 
@@ -16,8 +20,14 @@ public class GamePlayState : GameState
         playerController.enabled = true;
 
         GameEvent.onCollisionStone += OnGameOver;
+        GameEvent.onStickHit += OnStickHit;
     }
 
+    private void OnStickHit()
+    { 
+        scoreText.text = $"score : {levelController.score}"; 
+    }
+    
     private void OnGameOver()
     {
         Exit();

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class MainMenuState : GameState
 {
+    public LevelController levelController;
     public GameState gamePlayState;
+    public TMP_Text scoreText;
 
     public void PlayGame()
     {
@@ -14,5 +16,12 @@ public class MainMenuState : GameState
         Exit();
         gamePlayState.Enter();
 
+    }
+
+    protected override void OnEnable()
+    { 
+        base.OnEnable();
+
+        scoreText.text = $" HScore : {levelController.hightScore}";
     }
 }
