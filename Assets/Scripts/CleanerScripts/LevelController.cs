@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//namespace WorkProject
-//{
     public class LevelController : MonoBehaviour
     {
         public Spawner spawner;
@@ -82,4 +80,3 @@ using UnityEngine;
         }
 
     }
-//}
