@@ -18,6 +18,7 @@ public class GamePlayState : GameState
 
         levelController.enabled = true;
         playerController.enabled = true;
+        playerAnimator.enabled = true;
 
         GameEvent.onCollisionStone += OnGameOver;
         GameEvent.onStickHit += OnStickHit;
