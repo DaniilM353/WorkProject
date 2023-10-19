@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnUp() 
     {
-        player.SetDown(false);
+        player.SetUp(true);
     }
     
 }
