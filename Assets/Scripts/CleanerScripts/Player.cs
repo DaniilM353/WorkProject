@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Player : MonoBehaviour
 {
@@ -17,26 +18,32 @@ public class Player : MonoBehaviour
 	{
 		m_lastPosition = helper.position;
 		
-
-		Quaternion rot = stick.localRotation;
 		
-		Quaternion toRot = Quaternion.Euler(0, 0, m_isDown ? range : -range);
-
-		rot = Quaternion.RotateTowards(rot, toRot, speed * Time.deltaTime);
-
-		stick.localRotation = rot;
 
 	}
 
 	public void SetDown(bool value)
 	{ 
 		m_isDown = value;
+		GetComponent<Animator>().SetFloat("Speed Multiplier", 1);
+		GetComponent<Animator>().Play("Golf");     
+		Debug.Log("Down");
 	}
 
+	public void SetUp(bool value)
+	{ 
+		m_isDown = value;
+		GetComponent<Animator>().SetFloat("Speed Multiplier", -1);
+		GetComponent<Animator>().Play("Golf");
+		Debug.Log("Up");
+	}
+	
 	public void OnCollisionStick(Collider collider)
 	{
+		Debug.Log(collider);
 		if (collider.TryGetComponent(out Rigidbody body))
 		{
+			Debug.Log(body);
 			var dir = (helper.position - m_lastPosition).normalized;
 			body.AddForce(dir * power, ForceMode.Impulse);
 

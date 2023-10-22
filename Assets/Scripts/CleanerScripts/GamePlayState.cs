@@ -18,6 +18,7 @@ public class GamePlayState : GameState
 
         levelController.enabled = true;
         playerController.enabled = true;
+        playerAnimator.enabled = true;
 
         GameEvent.onCollisionStone += OnGameOver;
         GameEvent.onStickHit += OnStickHit;
@@ -31,6 +32,7 @@ public class GamePlayState : GameState
     private void OnGameOver()
     {
         Exit();
+        playerAnimator.enabled = false;
         gameOverState.Enter();
     }
 

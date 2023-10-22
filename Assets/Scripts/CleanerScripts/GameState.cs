@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class GameState : MonoBehaviour
 {
     public List<GameObject> views;
+    public Animator playerAnimator;
 
     public void Enter()
     { 

@@ -15,7 +15,8 @@ public class MainMenuState : GameState
 
         Exit();
         gamePlayState.Enter();
-
+        playerAnimator.enabled = true;
+        playerAnimator.SetFloat("Speed Multiplier", 0);
     }
 
     protected override void OnEnable()
@@ -25,3 +26,4 @@ public class MainMenuState : GameState
         scoreText.text = $" HScore : {levelController.hightScore}";
     }
 }
+ 
