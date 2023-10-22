@@ -10,8 +10,6 @@ public class GameOverState : GameState
     public void Restart()
     {
         levelController.ClearStone();
-        playerAnimator.enabled = false;
-        
         Exit();
         mainMenuState.Enter();
         

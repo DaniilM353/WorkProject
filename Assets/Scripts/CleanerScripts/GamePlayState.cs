@@ -32,6 +32,7 @@ public class GamePlayState : GameState
     private void OnGameOver()
     {
         Exit();
+        playerAnimator.enabled = false;
         gameOverState.Enter();
     }
 

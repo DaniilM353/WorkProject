@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 	{ 
 		m_isDown = value;
 		GetComponent<Animator>().SetFloat("Speed Multiplier", 1);
-		GetComponent<Animator>().Play("Golf");
+		GetComponent<Animator>().Play("Golf");     
 		Debug.Log("Down");
 	}
 
